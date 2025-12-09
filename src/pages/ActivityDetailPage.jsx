@@ -46,7 +46,7 @@ const ActivityDetailPage = () => {
     return () => { mounted = false; };
   }, [type, id, item]);
 
-  // fetch participant user data when needed
+  // fetch participant user data when neededd
   useEffect(() => {
     let mounted = true;
     const loadParticipants = async () => {
