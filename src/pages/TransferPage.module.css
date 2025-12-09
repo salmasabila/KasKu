@@ -1,0 +1,224 @@
+/* src/pages/TransferPage.module.css */
+.dashboardPage {
+  padding: 32px;
+  background-color: #f9fafb;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.mainGrid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 32px;
+  max-width: 100%;
+}
+
+.transferMainCard {
+  background: white;
+  padding: 28px;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.rightSidebar {
+  width: 100%;
+}
+
+.secureBadge {
+  background: white;
+  padding: 18px;
+  border-radius: 14px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.formGroup {
+  margin-bottom: 16px;
+}
+
+.inputLabel {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+  color: #374151;
+}
+
+.inputField {
+  width: 100%;
+  padding: 12px 14px 12px 40px; /* tetap ada padding kiri untuk icon */
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  outline: none;
+  font-size: 14px;
+  box-sizing: border-box;
+  position: relative;
+  background-color: white;
+}
+
+.inputField:focus {
+  border-color: #2563eb;
+}
+
+.searchWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchIcon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #6b7280;
+  pointer-events: none; /* supaya klik tetap ke input */
+  z-index: 1; /* pastikan di atas input */
+}
+
+.recipientList {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 20px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+
+.recipientItem {
+  min-width: 72px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 12px;
+  color: #374151;
+  display: flex;
+  flex-direction: column; /* nama di bawah avatar */
+  align-items: center;
+}
+
+.recipientAvatar {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+  margin-bottom: 6px; /* beri jarak ke nama */
+}
+
+.active .recipientAvatar {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+}
+
+/* circular avatar for the '+N more' indicator */
+.recipientMoreAvatar {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #f3f4f6;
+  color: #374151;
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 6px; /* match recipientAvatar spacing */
+  border: 2px solid transparent; /* match avatar border behavior */
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+  cursor: default;
+}
+
+.rowInputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.quickAmountBox {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.quickAmountBox button {
+  padding: 6px 12px;
+  border-radius: 10px;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.actionRow {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.cancelBtn {
+  padding: 12px 18px;
+  border-radius: 12px;
+  background: #e5e7eb;
+  color: #374151;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+
+.payButton {
+  padding: 12px 18px;
+  border-radius: 12px;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+
+.payButton:disabled {
+  background: #93c5fd;
+  cursor: not-allowed;
+}
+
+/* Sidebar right mirip TopUp */
+.historyCard {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.historyItem {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.recentAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.statusBadge {
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 6px;
+  background: #e5e7eb;
+  margin-top: 4px;
+}
+
+.viewAllLink {
+    color: #1d4ed8;
+    text-decoration: none;
+    font-size: 14px;
+}

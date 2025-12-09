@@ -1,0 +1,112 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 32px;
+    border-bottom: 1px solid #e5e7eb;
+    background-color: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+/* ================= LOGO + NAV ================= */
+
+.navGroup {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 800;
+    color: #1e40af;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    letter-spacing: 0.3px;
+}
+
+.logoIcon {
+    font-size: 22px;
+}
+
+.navbarNav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+/* ================= NAV LINK ================= */
+
+.navLink {
+    position: relative;
+    text-decoration: none;
+    color: #4b5563;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 6px 2px;
+    transition: color 0.2s ease;
+}
+
+.navLink:hover {
+    color: #1d4ed8;
+}
+
+/* Active underline lebih rapi */
+.navLink.active {
+    color: #1d4ed8;
+}
+
+.navLink.active::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #1d4ed8;
+    border-radius: 2px;
+}
+
+/* ================= PROFILE ================= */
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: #f9fafb;
+    padding: 6px 14px;
+    border-radius: 999px;
+}
+
+.avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #1d4ed8;
+}
+
+.profileInfo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+
+.profileName {
+    font-weight: 700;
+    font-size: 14px;
+    margin: 0;
+    color: #111827;
+}
+
+.profileNim {
+    font-size: 12px;
+    color: #6b7280;
+    margin: 0;
+    font-weight: 500;
+}

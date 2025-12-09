@@ -1,0 +1,180 @@
+/* gabungkan dengan CSS lama topup + tambahan history */
+.dashboardPage {
+  padding: 32px;
+  background-color: #f9fafb;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.mainGrid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 32px;
+  max-width: 100%;
+}
+
+.transferMainCard {
+  background: white;
+  padding: 28px;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.formGroup {
+  margin-bottom: 16px;
+}
+
+.inputLabel {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+  color: #374151;
+}
+
+.inputField {
+  width: 100%;
+  padding: 12px 14px 12px 40px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  outline: none;
+  font-size: 14px;
+  box-sizing: border-box;
+  position: relative;
+  background-color: white;
+}
+
+.inputField:focus {
+  border-color: #2563eb;
+}
+
+.quickAmountBox {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.quickAmountBox button {
+  padding: 6px 12px;
+  border-radius: 10px;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.actionRow {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.payButton {
+  padding: 12px 18px;
+  border-radius: 12px;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+
+.payButton:disabled {
+  background: #93c5fd;
+  cursor: not-allowed;
+}
+
+.secureBadge {
+  background: white;
+  padding: 18px;
+  border-radius: 14px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.secureTitle {
+  margin: 0;
+  font-size: 14px;
+}
+
+.secureText {
+  margin: 5px 0 0 0;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.historyCard {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.historyTitle {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.noHistory {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.historyItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.historyLeft {
+  display: flex;
+  align-items: center;
+}
+
+.historyText {
+  margin-left: 8px;
+}
+
+.historyAmount {
+  margin: 0;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.historyDate {
+  margin: 0;
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.historyRight {
+  text-align: right;
+}
+
+.recentAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.statusBadge {
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 6px;
+  background: #e5e7eb;
+  margin-top: 4px;
+}
+
+.viewAllLink {
+    color: #1d4ed8;
+    text-decoration: none;
+    font-size: 14px;
+}

@@ -1,0 +1,1149 @@
+/* src/pages/Dashboard.module.css */
+/* GABUNGAN FINAL & RAPI: Dashboard, Transfer, Split Bill, & Top Up */
+
+/* ===================================== */
+/* ========= GLOBAL LAYOUT ============= */
+/* ===================================== */
+
+.dashboardPage {
+    padding: 32px;
+    background-color: #f9fafb;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.mainGrid {
+    display: grid;
+    /* use 1fr and a fixed sidebar like other pages for consistent layout */
+    grid-template-columns: 1fr 320px;
+    gap: 32px;
+    max-width: 100%;
+}
+
+/* ===================================== */
+/* ========= DASHBOARD COMPONENTS ====== */
+/* ===================================== */
+
+/* --- Balance Card (Biru) --- */
+.balanceCard {
+    padding: 28px;
+    background: linear-gradient(135deg, #06b6d4 0%, #2563eb 100%);
+    color: white;
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(37,99,235,0.12);
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.balanceCard::after {
+    content: "";
+    position: absolute;
+    right: -40px;
+    top: -30px;
+    width: 160px;
+    height: 160px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+    filter: blur(12px);
+    pointer-events: none;
+}
+
+.balanceHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.balanceTitle {
+    opacity: 0.8;
+    font-size: 14px;
+    margin: 0;
+}
+
+.balanceIcon {
+    font-size: 22px;
+}
+
+.balanceAmount {
+    font-size: 32px;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 12px;
+}
+
+.balanceFooter {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.balanceInfoLabel {
+    opacity: 0.7;
+    margin-bottom: 4px;
+}
+
+.balanceInfoValue {
+    font-weight: 500;
+}
+
+/* --- Quick Links Panel --- */
+.quickLinksPanel {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.quickActionCard {
+    background-color: white;
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+    transition: transform 0.15s;
+}
+
+.quickActionCard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.quickActionIcon {
+    font-size: 20px;
+}
+
+.quickActionTitle {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0;
+}
+.quickActionSubtitle {
+    font-size: 13px;
+    color: #6b7280;
+    margin: 0;
+}
+
+/* --- Recent Transactions --- */
+.transactionPanel {
+    background-color: white;
+    padding: 24px;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.transactionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.transactionTitle {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.viewAllLink {
+    color: #1d4ed8;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.transactionItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.transactionStore {
+    font-weight: 500;
+    margin: 0;
+}
+
+.transactionTitle {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;
+}
+.viewAllLink {
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 14px;
+}
+.amountIn {
+    color: #10b981; /* Hijau */
+}
+
+.amountOut {
+    color: #ef4444; /* Merah */
+}
+
+/* ===================================== */
+/* ========= TOP UP PAGE STYLES ========= */
+/* ===================================== */
+
+.topUpPanel {
+    background-color: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-top: 24px;
+}
+
+.topUpTitle {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+/* --- Purple Balance Card (Khusus Top Up) --- */
+.topUpPurpleCard {
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 16px;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.topUpPurpleCard::after {
+    content: "";
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+/* --- Nominal Grid --- */
+.nominalLabel {
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: block;
+    color: #1f2937;
+}
+
+.nominalGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.nominalBtn {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #374151;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.nominalBtn:hover {
+    border-color: #6366f1;
+    color: #6366f1;
+}
+
+.nominalBtn.active {
+    background-color: #eef2ff;
+    border-color: #6366f1;
+    color: #6366f1;
+}
+
+.customInputWrapper {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.customInputPrefix {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+    font-weight: 600;
+}
+
+.customInput {
+    width: 100%;
+    padding: 12px 12px 12px 40px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+}
+
+.customInput:focus {
+    border-color: #6366f1;
+}
+
+/* --- Payment Methods --- */
+.methodCard {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    background: white;
+    transition: all 0.2s;
+}
+
+.methodCard.active {
+    border-color: #6366f1;
+    background-color: #f5f3ff;
+}
+
+.methodIcon {
+    width: 40px;
+    height: 40px;
+    background: #f3f4f6;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-size: 20px;
+    color: #4b5563;
+}
+
+.methodInfo {
+    flex-grow: 1;
+}
+
+.methodTitle {
+    font-weight: 600;
+    font-size: 14px;
+    color: #1f2937;
+    margin: 0;
+}
+
+.methodDesc {
+    font-size: 12px;
+    color: #9ca3af;
+    margin: 0;
+}
+
+.checkCircle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #d1d5db;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.active .checkCircle {
+    border-color: #6366f1;
+    background: #6366f1;
+}
+
+.checkCircle::after {
+    content: "✓";
+    color: white;
+    font-size: 12px;
+    display: none;
+}
+
+.active .checkCircle::after {
+    display: block;
+}
+
+.payButton {
+    width: 100%;
+    background: #6366f1;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.payButton:hover {
+    background: #4f46e5;
+}
+
+.payButton:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+}
+
+/* --- Right Column Widgets (Top Up & Transfer) --- */
+.infoCard, .promoCard, .historyCard {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.infoItem {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+    font-size: 13px;
+    color: #4b5563;
+}
+
+.promoCard {
+    background: #fffbeb; /* Kuning muda */
+    border: 1px solid #fcd34d;
+}
+
+.promoTitle {
+    color: #b45309;
+    font-weight: 700;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.promoCodeBox {
+    background: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px dashed #b45309;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    color: #b45309;
+    font-size: 14px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.historyItem {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.historyIcon {
+    width: 32px;
+    height: 32px;
+    background: #dcfce7;
+    color: #16a34a;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.historyPlus {
+    margin-left: auto;
+    color: #16a34a;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+/* ===================================== */
+/* ========= SPLIT BILL PAGE STYLES ==== */
+/* ===================================== */
+
+.splitBillPage {
+    padding-top: 10px;
+    padding-bottom: 50px;
+}
+
+.splitBillContainer {
+    background-color: white;
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    margin-bottom: 24px;
+}
+
+.sectionTitle {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #1e40af;
+}
+
+/* --- Form Elements --- */
+.formGroup {
+    margin-bottom: 16px;
+}
+
+.inputLabel {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #4b5563;
+    margin-bottom: 8px;
+}
+
+.inputField {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+/* --- Category Grid --- */
+.categoryGrid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6 kolom */
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.categoryItem {
+    text-align: center;
+    padding: 10px 5px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.categoryItem:hover {
+    border-color: #3b82f6;
+}
+
+.categoryActive {
+    background-color: #1e40af; 
+    color: white;
+    border-color: #1e40af;
+}
+
+.categoryIcon {
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+
+.categoryName {
+    font-size: 12px;
+    margin: 0;
+}
+
+/* --- Split Type Buttons --- */
+.splitTypeButtons {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.splitTypeButton {
+    background-color: #f3f4f6;
+    color: #4b5563;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.splitTypeButton.splitTypeActive {
+    background-color: #1e40af; 
+    color: white;
+}
+
+.splitTypeButton span {
+    display: block;
+    font-weight: 400;
+    font-size: 12px;
+}
+
+/* --- Select Friends Grid --- */
+.friendsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 kolom */
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.friendItem {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    gap: 10px;
+}
+
+.friendItem input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+}
+
+.friendAvatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.friendName {
+    font-weight: 500;
+    margin: 0;
+    font-size: 14px;
+}
+
+.friendID {
+    font-size: 12px;
+    color: #6b7280;
+    margin: 0;
+}
+
+.addFriendButton {
+    background: none;
+    border: none;
+    color: #1e40af;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.addFriendIcon {
+    font-size: 16px;
+}
+
+/* --- Summary Panel (2 Kolom di bawah) --- */
+.summaryGrid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr; 
+    gap: 24px;
+}
+
+.yourSharePanel, .selectedFriendsPanel {
+    background-color: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.summaryTitle {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 10px;
+}
+
+.shareAmount {
+    font-size: 32px;
+    font-weight: 700;
+    color: #10b981; /* Warna hijau untuk jumlah yang dibagi */
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.summaryDetails p {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #4b5563;
+    margin: 8px 0;
+}
+
+.summaryDetails span {
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.createBillButton {
+    width: 100%;
+    padding: 12px;
+    background-color: #1e40af;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.createBillButton:hover {
+    background-color: #1d4ed8;
+}
+
+/* --- Selected Friends List --- */
+.selectedFriendItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.selectedFriendItem div {
+    flex-grow: 1;
+    margin-left: 10px;
+}
+
+.friendShare {
+    font-weight: 600;
+    color: #1f2937;
+    font-size: 14px;
+}
+
+/* ===================================== */
+/* ========= TRANSFER PAGE EXTRA ======= */
+/* ===================================== */
+
+.transferPage {
+    padding-top: 10px;
+    padding-bottom: 50px;
+}
+
+/* Layout 2 Kolom Spesifik Transfer */
+.transferGrid {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr; /* Kiri lebih lebar */
+    gap: 24px;
+}
+
+/* Bagian Kiri: Form Transfer */
+.transferMainCard {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* Quick Recipient (Avatar Bulat) */
+.recipientList {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+.recipientItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: 0.2s;
+}
+
+.recipientItem:hover, .recipientItem.active {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+.recipientAvatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid transparent;
+    margin-bottom: 5px;
+}
+
+.recipientItem.active .recipientAvatar {
+    border-color: #1d4ed8;
+}
+
+.addNewBtn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px dashed #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #6b7280;
+    margin-bottom: 5px;
+}
+
+/* Input Bank & Account Bersebelahan */
+.rowInputs {
+    display: flex;
+    gap: 20px;
+}
+
+.rowInputs .formGroup {
+    flex: 1;
+}
+
+/* Amount Besar */
+.amountInputBig {
+    font-size: 32px;
+    font-weight: 700;
+    padding: 15px;
+    height: auto;
+    color: #1f2937;
+}
+
+/* Quick Amount Buttons */
+.quickAmountBox {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.quickAmtBtn {
+    background: #f3f4f6;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #4b5563;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.quickAmtBtn:hover {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+/* Bagian Kanan: Recent Transfer */
+.secureBadge {
+    background: #eff6ff;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 15px;
+    align-items: start;
+}
+
+.recentTransferList {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.recentItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.recentAvatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+
+.statusBadge {
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    background: #dcfce7;
+    color: #166534;
+}
+
+/* ===================================== */
+/* ========== RESPONSIVITAS ============ */
+/* ===================================== */
+
+@media (max-width: 1024px) {
+    /* --- DASHBOARD, TRANSFER, TOP UP --- */
+    .mainGrid {
+        grid-template-columns: 1fr; /* 1 Kolom untuk semua halaman */
+        gap: 24px;
+    }
+    .quickLinksPanel {
+        flex-direction: row; 
+        gap: 12px;
+        margin-bottom: 24px; 
+    }
+    .quickActionCard {
+        flex-basis: 32%;
+    }
+    /* Khusus halaman Top Up */
+    .topUpPanel {
+        margin-top: 0;
+    }
+    .transferBalanceSection, .transferFormContainer {
+        max-width: 100%;
+    }
+
+    /* --- SPLIT BILL PAGE --- */
+    .categoryGrid {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+    .friendsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .summaryGrid {
+        grid-template-columns: 1fr; 
+    }
+    .selectedFriendsPanel {
+        margin-top: 24px;
+    }
+}
+
+/* RESPONSIVE KHUSUS TRANSFER (900px) */
+@media (max-width: 900px) {
+    .transferGrid {
+        grid-template-columns: 1fr;
+    }
+    .rowInputs {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    /* --- GENERAL --- */
+    .quickLinksPanel {
+        flex-direction: column; 
+    }
+    .quickActionCard {
+        width: 100%;
+        flex-basis: auto;
+    }
+    
+    /* --- TOP UP PAGE --- */
+    .nominalGrid {
+        grid-template-columns: repeat(2, 1fr); /* Nominal jadi 2 kolom di HP */
+    }
+
+    /* --- SPLIT BILL PAGE --- */
+    .categoryGrid {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    .friendsGrid {
+        grid-template-columns: 1fr; 
+    }
+    .splitTypeButtons {
+        flex-direction: column;
+    }
+    .splitTypeButton {
+        width: 100%;
+    }
+
+    
+}
+
+/* ... CSS sebelumnya ... */
+
+/* ===================================== */
+/* ========= MODAL (POPUP) STYLES ====== */
+/* ===================================== */
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Latar belakang gelap transparan */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Pastikan di atas elemen lain */
+}
+
+.modalContent {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.modalTitle {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #1f2937;
+    text-align: center;
+}
+
+.modalActions {
+    display: flex;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.btnCancel {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    color: #4b5563;
+}
+
+.btnSave {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    background: #1d4ed8;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    color: white;
+}
+
+.btnSave:hover {
+    background-color: #1e40af;
+}
+
+/* ===================================== */
+/* ========= HISTORY PAGE EXTRA ======== */
+/* ===================================== */
+
+.historyControls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.searchBox {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-grow: 1;
+    max-width: 400px;
+}
+
+.searchInput {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 14px;
+    color: #374151;
+}
+
+.filterGroup {
+    display: flex;
+    gap: 10px;
+}
+
+.filterBtn {
+    background: white;
+    border: 1px solid #e5e7eb;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: #6b7280;
+}
+
+.filterBtn.active {
+    background-color: #1d4ed8;
+    color: white;
+    border-color: #1d4ed8;
+}
+
+.historyListContainer {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+.historyRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #f3f4f6;
+    transition: background 0.2s;
+}
+
+.historyRow:hover {
+    background-color: #f9fafb;
+}
+
+.historyRow:last-child {
+    border-bottom: none;
+}
+
+.historyIconWrapper {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-right: 16px;
+}
+
+.iconTransfer { background: #dbeafe; color: #1d4ed8; }
+.iconTopUp { background: #dcfce7; color: #16a34a; }
+.iconSplit { background: #fce7f3; color: #db2777; }
+.iconPayment { background: #ffedd5; color: #ea580c; }
+
+.statusPill {
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+.statusSuccess { background: #dcfce7; color: #166534; }
+.statusPending { background: #fef9c3; color: #854d0e; }
+.statusFailed { background: #fee2e2; color: #991b1b; }
+
+@media (max-width: 600px) {
+    .historyControls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .searchBox {
+        max-width: 100%;
+    }
+    .filterGroup {
+        justify-content: center;
+    }
+}

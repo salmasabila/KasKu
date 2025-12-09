@@ -1,0 +1,345 @@
+/* ========== WRAPPER ========== */
+.splitBillPage {
+    padding: 32px;
+    background-color: #f9fafb;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/* ========== MAIN CONTAINER ========== */
+.splitBillContainer {
+    background-color: white;
+    padding: 28px;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.sectionTitle {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+/* ========== INPUT ========== */
+.inputLabel {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #374151;
+}
+
+.inputField {
+    width: 100%;
+    padding: 12px 14px 12px 40px; /* keep left padding for search icon */
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.inputField:focus {
+    border-color: #2563eb;
+}
+
+/* Helper / subtitle text under inputs */
+.helperText {
+    font-size: 12px;
+    color: #6b7280;
+    margin-top: 8px;
+    margin-bottom: 4px;
+}
+
+/* Form group spacing used in Bill Information */
+.formGroup {
+    margin-bottom: 16px;
+}
+
+/* ========== CATEGORY GRID (1 baris penuh) ========== */
+.categoryGrid {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    gap: 12px;
+    margin: 14px 0 10px;
+}
+
+.categoryItem {
+    padding: 14px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.categoryItem:hover {
+    border-color: #6366f1;
+}
+
+.categoryActive {
+    border-color: #4f46e5 !important;
+    background-color: #eef2ff;
+}
+
+.categoryIcon {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.categoryName {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* ========== FRIEND LIST ========== */
+.friendsGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+}
+
+.friendItem {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px;
+    background: #f9fafb;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+}
+
+.friendAvatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.friendName {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.friendID {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.addFriendButton {
+    padding: 12px;
+    width: 100%;
+    background-color: #eef2ff;
+    color: #4f46e5;
+    font-weight: 700;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.addFriendButton:hover {
+    background-color: #e0e7ff;
+}
+
+/* ========== SUMMARY PANELS ========== */
+.summaryGrid {
+    margin-top: 28px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.yourSharePanel,
+.selectedFriendsPanel {
+    background-color: white;
+    padding: 24px;
+    border-radius: 14px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+}
+
+.summaryTitle {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.shareAmount {
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d4ed8;
+    margin: 10px 0 20px;
+}
+
+.selectedFriendItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.friendShare {
+    font-weight: 700;
+    color: #10b981;
+}
+
+.createBillButton {
+    width: 100%;
+    padding: 14px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-top: 24px;
+}
+
+.createBillButton:disabled,
+.btnDisabled {
+    background: #93c5fd;
+    cursor: not-allowed;
+}
+
+.createBillButton:hover:not(:disabled) {
+    background-color: #1e40af;
+}
+
+/* Share input styling for selected friends */
+.shareInput {
+    max-width: 140px;
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: right; /* numeric values align right */
+    box-sizing: border-box;
+    background: #ffffff;
+}
+
+.shareInput:focus {
+    border-color: #6366f1;
+}
+
+.shareWarning {
+    color: #dc2626;
+    font-weight: 700;
+    margin-top: 8px;
+    font-size: 13px;
+}
+
+.createBillButton:hover {
+    background-color: #4338ca;
+}
+
+/* ========== SELECT RECIPIENT LIST ========= */
+.recipientList {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 12px; /* space between search bar and first fetched user */
+}
+
+.recipientItem {
+    display: flex;
+    align-items: center;
+    background: #f9fafb;
+    padding: 8px 12px; /* reduced vertical padding for a tighter list */
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+    border: 1px solid transparent;
+    gap: 12px; /* consistent gap between checkbox, avatar, and info */
+}
+
+.recipientItem:hover {
+    background: #eef2ff;
+}
+
+.recipientItem.active {
+    border: 2px solid #3b82f6;
+    background: #eff6ff;
+}
+
+/* Support for module class `active` used in JSX: styles.active */
+.active {
+    border: 2px solid #3b82f6;
+    background: #eff6ff;
+}
+
+.avatarLarge {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 12px;
+}
+
+/* Checkbox styling for consistent alignment and spacing */
+.checkBox {
+    width: 18px;
+    height: 18px;
+    margin-left: 4px; /* small left inset so checkbox isn't flush to container edge */
+    margin-right: 6px; /* spacing between checkbox and avatar */
+    accent-color: #4f46e5; /* tint checkbox to theme color */
+}
+
+/* More card that indicates there are additional users */
+.recipientMore {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    border-radius: 12px;
+    background: #f3f4f6;
+    color: #374151;
+    font-weight: 700;
+    border: 1px dashed #e5e7eb;
+}
+
+.moreText {
+    font-size: 13px;
+}
+
+.recipientName {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.recipientId {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+/* ========== SEARCH ICON FIX ========== */
+.searchWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.searchIcon {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #6b7280;
+    pointer-events: none;
+    z-index: 1;
+}
